@@ -1,3 +1,8 @@
+/*
+./node_modules/.bin/selenium-standalone start
+npm test
+*/
+
 'use strict';
 
 const assert = require('assert');
@@ -7,14 +12,14 @@ describe('test', function() {
     before(function () {
         const browser = webdriver.remote({
             desiredCapabilities: {
-            browserName: 'chrome',
+                browserName: 'chrome',
                 port: 7055
             }
         });
 
         this.browser = browser
             .init()
-            .url('https://music.yandex.ru/label/14')
+            .url('https://music.yandex.ru/label/14');
 
         return this.browser;
     });
@@ -47,7 +52,7 @@ describe('test', function() {
             console.log(res); // Почему [ true, true ] ???
             assert(res, true, 'Artists tab is not the second tab on the page');
         });
-    })
+    });
 
 
 
